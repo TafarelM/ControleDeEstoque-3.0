@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class ClienteColecao : List<Cliente>
+    public  class ClienteJuridico : Pessoa
     {
+        public PessoaJuridica pessoaJurica { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace View
 {
-    partial class ConsultarClienteFisico
+    partial class FrmConsultarClienteFisico
     {
         /// <summary>
         /// Required designer variable.

@@ -11,7 +11,7 @@ namespace BLL
 {
     public class ClienteBLL
     {
-        public string inserir(Cliente cliente)
+        public string inserir(ClienteFisico cliente)
         {
             ClienteDAL dal = new ClienteDAL();
             string retorno = dal.inserir(cliente);
@@ -19,7 +19,7 @@ namespace BLL
             return retorno;
         }
 
-        public string alterar(Cliente cliente)
+        public string alterar(ClienteFisico cliente)
         {
             ClienteDAL dal = new ClienteDAL();
             string retorno = dal.alterar(cliente);

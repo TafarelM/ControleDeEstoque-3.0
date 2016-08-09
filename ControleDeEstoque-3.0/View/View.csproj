@@ -46,17 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsultarClienteFisico.cs">
+    <Compile Include="FrmConsultarClienteFisico.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConsultarClienteFisico.Designer.cs">
-      <DependentUpon>ConsultarClienteFisico.cs</DependentUpon>
+    <Compile Include="FrmConsultarClienteFisico.Designer.cs">
+      <DependentUpon>FrmConsultarClienteFisico.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmManter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmManter.Designer.cs">
+      <DependentUpon>FrmManter.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmManterClienteFisico.cs">
       <SubType>Form</SubType>
@@ -66,8 +72,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ConsultarClienteFisico.resx">
-      <DependentUpon>ConsultarClienteFisico.cs</DependentUpon>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConsultarClienteFisico.resx">
+      <DependentUpon>FrmConsultarClienteFisico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmManter.resx">
+      <DependentUpon>FrmManter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmManterClienteFisico.resx">
       <DependentUpon>FrmManterClienteFisico.cs</DependentUpon>

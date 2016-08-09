@@ -10,31 +10,11 @@ using System.Windows.Forms;
 
 namespace View
 {
-    public partial class FrmManterClienteFisico : Form
+    public partial class FrmManterClienteFisico : View.FrmManter
     {
         public FrmManterClienteFisico()
         {
             InitializeComponent();
-        }
-
-        private void FrmManterClienteFisico_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSalvar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnLimpar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnFechar_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
