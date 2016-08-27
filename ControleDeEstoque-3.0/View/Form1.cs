@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +22,12 @@ namespace View
         {
             FrmManter manter = new FrmManter();
             manter.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FrmManterFuncionario frmManterFuncionario = new FrmManterFuncionario(AcaoNaTela.Inserir, null);
+            frmManterFuncionario.ShowDialog();
         }
     }
 }

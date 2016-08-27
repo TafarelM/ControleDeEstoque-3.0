@@ -11,6 +11,7 @@ namespace BLL
 {
     public class ClienteBLL
     {
+        /*
         public string inserir(ClienteFisico cliente)
         {
             ClienteDAL dal = new ClienteDAL();
@@ -51,6 +52,6 @@ namespace BLL
             clienteColecao = dal.consultarNome(nome);
 
             return clienteColecao;
-        }
+        }*/
     }
 }

@@ -13,6 +13,7 @@ namespace DTO
         public string cpf { get; set; }
         public string rg { get; set; }
         public string sexo { get; set; }
-        public string dataNascimento { get; set; }
+        public DateTime dataNascimento { get; set; }
+
     }
 }

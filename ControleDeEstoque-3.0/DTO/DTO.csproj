@@ -40,9 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcaoNaTela.cs" />
     <Compile Include="ClienteFisico.cs" />
     <Compile Include="ClienteFisicoColecao.cs" />
     <Compile Include="ClienteJuridico.cs" />
+    <Compile Include="Contato.cs" />
+    <Compile Include="Endereco.cs" />
+    <Compile Include="Estado.cs" />
+    <Compile Include="Funcionario.cs" />
     <Compile Include="Pessoa.cs" />
     <Compile Include="PessoaColecao.cs" />
     <Compile Include="PessoaFisica.cs" />

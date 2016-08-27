@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class TipoPessoa
+    public enum AcaoNaTela
     {
-        public int idPessoa { get; set; }
-        public string descricao { get; set; }
+        Exlcuir = 0,
+        Inserir = 1,
+        Alterar = 2,
+        Consultar = 3
     }
 }

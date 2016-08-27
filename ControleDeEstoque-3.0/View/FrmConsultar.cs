@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace View
 {
-    public partial class FrmManterClienteFisico : View.FrmManter
+    public partial class FrmConsultar : Form
     {
-        public FrmManterClienteFisico()
+        public FrmConsultar()
         {
             InitializeComponent();
         }
