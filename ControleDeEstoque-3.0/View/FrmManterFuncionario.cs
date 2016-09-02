@@ -25,7 +25,6 @@ namespace View
             if (acaoNaTela == AcaoNaTela.Inserir)
             {
                 //INSERIR
-                //muda o nome da tela
                 this.Text = "Inserir Funcionario";
 
             }
@@ -33,43 +32,12 @@ namespace View
             {
                 //ALTERAR
                 this.Text = "Alterar Funcionario";
-
-                //grava o conteudo no campo da tela
-                /*
-                txtCod.Text = aluno.idAluno.ToString();
-                txtNome.Text = aluno.nome;
-                txtSobrenome.Text = aluno.sobrenome;
-                txtmCpf.Text = aluno.cpf;
-                txtmRg.Text = aluno.rg;
-                cbRgExp.Text = aluno.rgExp;
-                dateTimeDataNasc.Text = aluno.dataNascimento.ToString();
-                txtEmail.Text = aluno.email;
-                if (aluno.sexo == "Masculino")
-                {
-                    rbtnMasculino.Checked = true;
-                }
-                else
-                {
-                    rbtnFeminino.Checked = true;
-                }
-                txtmTelefone.Text = aluno.telefone;
-                txtCel.Text = aluno.celular;
-                txtUsuario.Text = aluno.usuario.usuario;
-                txtSenha.Text = aluno.usuario.senha;*/
-
-            }
-            else if (acaoNaTela == AcaoNaTela.Consultar)
-            {
-                //CONSULTAR
-                this.Text = "Consultar Funcionario";
-
-                //grava o conteudo no campo da tela
                 
-                txtIDFuncionario.Text = funcionario.idFuncionario.ToString();
+                txtIDFuncionario.Text = funcionario.idPessoa.ToString();
                 txtNome.Text = funcionario.nome;
-                mtxtCPF.Text = funcionario.cpf;
+                mtxtCEP.Text = funcionario.cpf;
                 mtxtRG.Text = funcionario.rg;                
-                if (funcionario.sexo == "M")
+                if (funcionario.sexo.Equals("Masculino"))
                 {
                     rbtnMasculino.Checked = true;
                 }
@@ -79,24 +47,83 @@ namespace View
                 }
                 dtpDataNascimento.Text = funcionario.dataNascimento.ToString();
                 //contato
+                txtIDContato.Text = funcionario.contato.idContato.ToString();
+                txtEmail.Text = funcionario.contato.email;
+                mtxtTelefone.Text = funcionario.contato.telefone;
+                mtxtCelular.Text = funcionario.contato.celular;
+                //endereco
+                txtIDEndereco.Text = funcionario.endereco.idEndereco.ToString();
+                txtRua.Text = funcionario.endereco.rua;
+                txtNumero.Text = funcionario.endereco.numero;
+                txtBairro.Text = funcionario.endereco.bairro;
+                txtCidade.Text = funcionario.endereco.cidade;
+                cbEstado.SelectedValue = funcionario.endereco.estado;
+                mtxtCEP.Text = funcionario.endereco.cep;
+                //funcionario
+                txtSetor.Text = funcionario.setor;
+                txtCargo.Text = funcionario.cargo;
+                dtpDataEntrada.Text = funcionario.dataEntrada.ToString();
+            }
+            else if (acaoNaTela == AcaoNaTela.Consultar)
+            {
+                //CONSULTAR
+                this.Text = "Consultar Funcionario";
+
+                //grava o conteudo no campo da tela                
+                txtIDFuncionario.Text = funcionario.idPessoa.ToString();
+                txtNome.Text = funcionario.nome;
+                mtxtCPF.Text = funcionario.cpf;
+                mtxtRG.Text = funcionario.rg;                
+                if (funcionario.sexo.Equals("Masculino"))
+                {
+                    rbtnMasculino.Checked = true;
+                }
+                else
+                {
+                    rbtnFeminino.Checked = true;
+                }
+                dtpDataNascimento.Text = funcionario.dataNascimento.ToString();
+                //contato
+                txtIDContato.Text = funcionario.contato.idContato.ToString();
                 mtxtTelefone.Text = funcionario.contato.telefone;
                 mtxtCelular.Text = funcionario.contato.celular;
                 txtEmail.Text = funcionario.contato.email;
                 //endereco
-                
+                txtIDEndereco.Text = funcionario.endereco.idEndereco.ToString();
+                txtRua.Text = funcionario.endereco.rua;
+                txtNumero.Text = funcionario.endereco.numero;
+                txtBairro.Text = funcionario.endereco.bairro;
+                txtCidade.Text = funcionario.endereco.cidade;
+                cbEstado.SelectedValue = funcionario.endereco.estado;
+                mtxtCEP.Text = funcionario.endereco.cep;
+                //funcionario
+                txtSetor.Text = funcionario.setor;
+                txtCargo.Text = funcionario.cargo;
+                dtpDataEntrada.Text = funcionario.dataEntrada.ToString();
 
                 //desabilitando os campos da tela
+                //panelPrincipal.Enabled = false;
                 txtIDFuncionario.ReadOnly = true;
+                txtIDEndereco.ReadOnly = true;
+                txtIDContato.ReadOnly = true;
                 txtNome.ReadOnly = true;
                 mtxtCPF.ReadOnly = true;
                 mtxtRG.ReadOnly = true;
-                dtpDataNascimento.Enabled = false;
-                txtEmail.ReadOnly = true;
+                dtpDataNascimento.Enabled = false;                
                 rbtnMasculino.Enabled = false;
                 rbtnFeminino.Enabled = false;
+                txtEmail.ReadOnly = true;
                 mtxtTelefone.ReadOnly = true;
                 mtxtCelular.ReadOnly = true;
-
+                txtRua.ReadOnly = true;
+                txtNumero.ReadOnly = true;
+                txtBairro.ReadOnly = true;
+                txtCidade.ReadOnly = true;
+                cbEstado.Enabled = false;
+                mtxtCEP.ReadOnly = true;
+                txtSetor.ReadOnly = true;
+                txtCargo.ReadOnly = true;
+                dtpDataEntrada.Enabled = false;
 
                 //mudando a text do botão e desabilitando ele
                 btnSalvar.Visible = false;
@@ -108,8 +135,8 @@ namespace View
         {
             EstadoBLL estadoBLL = new EstadoBLL();
             cbEstado.DataSource = estadoBLL.ComboBox();
-            cbEstado.DisplayMember = "estado";
             cbEstado.ValueMember = "idEstado";
+            cbEstado.DisplayMember = "estado";            
         }
 
         //SALVAR
@@ -145,7 +172,7 @@ namespace View
                 funcionario.endereco.numero = txtNumero.Text;
                 funcionario.endereco.bairro = txtBairro.Text;
                 funcionario.endereco.cidade = txtCidade.Text;
-                funcionario.endereco.estado = cbEstado.SelectedIndex+1;
+                funcionario.endereco.estado = Convert.ToInt32(cbEstado.SelectedValue);
                 funcionario.endereco.cep = mtxtCEP.Text;
                 //funcionario
                 funcionario.setor = txtSetor.Text;
@@ -176,13 +203,12 @@ namespace View
             else if (acaoNaTelaSelecionada.Equals(AcaoNaTela.Alterar))
             {
                 //ALTERAR
-
                 Funcionario funcionario = new Funcionario();
                 funcionario.contato = new Contato();
                 funcionario.endereco = new Endereco();
                 funcionario.tipoPessoa = new TipoPessoa();
 
-                funcionario.idFuncionario = Convert.ToInt32(txtIDFuncionario.Text);
+                funcionario.idPessoa = Convert.ToInt32(txtIDFuncionario.Text);
                 funcionario.nome = txtNome.Text;
                 funcionario.cpf = mtxtCPF.Text;
                 funcionario.rg = mtxtRG.Text;
@@ -196,14 +222,17 @@ namespace View
                 }
                 funcionario.dataNascimento = dtpDataNascimento.Value;
                 //contato
+                funcionario.contato.idContato = Convert.ToInt32(txtIDContato.Text);
                 funcionario.contato.email = txtEmail.Text;
                 funcionario.contato.telefone = mtxtTelefone.Text;
                 funcionario.contato.celular = mtxtCelular.Text;
                 //endereco
+                funcionario.endereco.idEndereco = Convert.ToInt32(txtIDEndereco.Text);
                 funcionario.endereco.rua = txtRua.Text;
                 funcionario.endereco.numero = txtNumero.Text;
+                funcionario.endereco.bairro = txtBairro.Text;
                 funcionario.endereco.cidade = txtCidade.Text;
-                funcionario.endereco.estado = cbEstado.SelectedIndex + 1;
+                funcionario.endereco.estado = Convert.ToInt32(cbEstado.SelectedValue);
                 funcionario.endereco.cep = mtxtCEP.Text;
                 //funcionario
                 funcionario.setor = txtSetor.Text;

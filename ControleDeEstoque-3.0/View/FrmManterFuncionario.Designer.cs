@@ -70,6 +70,8 @@
             this.lblIdFuncionario = new System.Windows.Forms.Label();
             this.dtpDataNascimento = new System.Windows.Forms.DateTimePicker();
             this.dtpDataEntrada = new System.Windows.Forms.DateTimePicker();
+            this.txtIDContato = new System.Windows.Forms.TextBox();
+            this.txtIDEndereco = new System.Windows.Forms.TextBox();
             this.panelBtn.SuspendLayout();
             this.panelPrincipal.SuspendLayout();
             this.gbEndereco.SuspendLayout();
@@ -84,6 +86,8 @@
             // 
             // panelPrincipal
             // 
+            this.panelPrincipal.Controls.Add(this.txtIDEndereco);
+            this.panelPrincipal.Controls.Add(this.txtIDContato);
             this.panelPrincipal.Controls.Add(this.dtpDataEntrada);
             this.panelPrincipal.Controls.Add(this.dtpDataNascimento);
             this.panelPrincipal.Controls.Add(this.lblIdFuncionario);
@@ -504,6 +508,24 @@
             this.dtpDataEntrada.Size = new System.Drawing.Size(100, 20);
             this.dtpDataEntrada.TabIndex = 25;
             // 
+            // txtIDContato
+            // 
+            this.txtIDContato.Location = new System.Drawing.Point(120, 33);
+            this.txtIDContato.Name = "txtIDContato";
+            this.txtIDContato.ReadOnly = true;
+            this.txtIDContato.Size = new System.Drawing.Size(56, 20);
+            this.txtIDContato.TabIndex = 27;
+            this.txtIDContato.TabStop = false;
+            // 
+            // txtIDEndereco
+            // 
+            this.txtIDEndereco.Location = new System.Drawing.Point(211, 33);
+            this.txtIDEndereco.Name = "txtIDEndereco";
+            this.txtIDEndereco.ReadOnly = true;
+            this.txtIDEndereco.Size = new System.Drawing.Size(49, 20);
+            this.txtIDEndereco.TabIndex = 27;
+            this.txtIDEndereco.TabStop = false;
+            // 
             // FrmManterFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -568,5 +590,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DateTimePicker dtpDataEntrada;
         private System.Windows.Forms.DateTimePicker dtpDataNascimento;
+        private System.Windows.Forms.TextBox txtIDEndereco;
+        private System.Windows.Forms.TextBox txtIDContato;
     }
 }

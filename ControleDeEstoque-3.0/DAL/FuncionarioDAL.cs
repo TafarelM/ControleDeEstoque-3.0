@@ -62,14 +62,14 @@ namespace DAL
                 //limpar antes de usar
                 acessoDadosSqlServer.LimparParametros();
                 //pessoa fisica
-                acessoDadosSqlServer.AdicionarParametros("@idPessoaFidica", funcionario.idPessoaFisica);
+                acessoDadosSqlServer.AdicionarParametros("@idPessoa", funcionario.idPessoa);
                 acessoDadosSqlServer.AdicionarParametros("@nome", funcionario.nome);
                 acessoDadosSqlServer.AdicionarParametros("@cpf", funcionario.cpf);
                 acessoDadosSqlServer.AdicionarParametros("@rg", funcionario.rg);
                 acessoDadosSqlServer.AdicionarParametros("@sexo", funcionario.sexo);
                 acessoDadosSqlServer.AdicionarParametros("@dataNascimento", funcionario.dataNascimento);
                 //endereco
-                acessoDadosSqlServer.AdicionarParametros("@idPessoa", funcionario.endereco.idEndereco);
+                acessoDadosSqlServer.AdicionarParametros("@idEndereco", funcionario.endereco.idEndereco);
                 acessoDadosSqlServer.AdicionarParametros("@rua", funcionario.endereco.rua);
                 acessoDadosSqlServer.AdicionarParametros("@numero", funcionario.endereco.numero);
                 acessoDadosSqlServer.AdicionarParametros("@bairro", funcionario.endereco.bairro);
@@ -77,12 +77,11 @@ namespace DAL
                 acessoDadosSqlServer.AdicionarParametros("@estado", funcionario.endereco.estado);
                 acessoDadosSqlServer.AdicionarParametros("@cep", funcionario.endereco.cep);
                 //contato
-                acessoDadosSqlServer.AdicionarParametros("@idPessoa", funcionario.contato.idContato);
+                acessoDadosSqlServer.AdicionarParametros("@idContato", funcionario.contato.idContato);
                 acessoDadosSqlServer.AdicionarParametros("@email", funcionario.contato.email);
                 acessoDadosSqlServer.AdicionarParametros("@telefone", funcionario.contato.telefone);
                 acessoDadosSqlServer.AdicionarParametros("@celular", funcionario.contato.celular);
                 //funcionario
-                acessoDadosSqlServer.AdicionarParametros("@idPessoa", funcionario.idFuncionario);
                 acessoDadosSqlServer.AdicionarParametros("@setor", funcionario.setor);
                 acessoDadosSqlServer.AdicionarParametros("@cargo", funcionario.cargo);
                 acessoDadosSqlServer.AdicionarParametros("@dataEntrada", funcionario.dataEntrada);
@@ -139,22 +138,33 @@ namespace DAL
                     funcionario.contato = new Contato();
                     funcionario.tipoPessoa = new TipoPessoa();
 
-                    /*
-                    funcionario.idAluno = Convert.ToInt32(linha["IDAluno"]);
-                    funcionario.nome = Convert.ToString(linha["Nome"]);
-                    funcionario.sobrenome = Convert.ToString(linha["Sobrenome"]);
-                    funcionario.cpf = Convert.ToString(linha["CPF"]);
-                    funcionario.rg = Convert.ToString(linha["RG"]);
-                    funcionario.rgExp = Convert.ToString(linha["RGExp"]);
-                    funcionario.dataNascimento = Convert.ToDateTime(linha["DataNascimento"]);
-                    funcionario.email = Convert.ToString(linha["Email"]);
-                    funcionario.sexo = Convert.ToString(linha["Sexo"]);
-                    funcionario.telefone = Convert.ToString(linha["Telefone"]);
-                    funcionario.celular = Convert.ToString(linha["Celular"]);
-                    //usuario
-                    funcionario.usuario.idUsuario = Convert.ToInt32(linha["IDUsuario"]);
-                    funcionario.usuario.usuario = Convert.ToString(linha["Usuario"]);
-                    funcionario.usuario.senha = Convert.ToString(linha["Senha"]);*/
+                    //pessoa
+                    funcionario.idPessoa = Convert.ToInt32(linha["idPessoa"]);
+                    funcionario.tipoPessoa.idPessoa = Convert.ToInt32(linha["idPessoa"]);
+                    funcionario.tipoPessoa.descricao = Convert.ToString(linha["descricao"]);
+                    //pessoa fisica
+                    funcionario.nome = Convert.ToString(linha["nome"]);
+                    funcionario.cpf = Convert.ToString(linha["cpf"]);
+                    funcionario.rg = Convert.ToString(linha["rg"]);
+                    funcionario.sexo = Convert.ToString(linha["sexo"]);
+                    funcionario.dataNascimento = Convert.ToDateTime(linha["dataNascimento"]);
+                    //contato
+                    funcionario.contato.idContato = Convert.ToInt32(linha["idContato"]);
+                    funcionario.contato.email = Convert.ToString(linha["email"]);
+                    funcionario.contato.telefone = Convert.ToString(linha["telefone"]);
+                    funcionario.contato.celular = Convert.ToString(linha["celular"]);
+                    //endereco
+                    funcionario.endereco.idEndereco = Convert.ToInt32(linha["idEndereco"]);
+                    funcionario.endereco.rua = Convert.ToString(linha["rua"]);
+                    funcionario.endereco.numero = Convert.ToString(linha["numero"]);
+                    funcionario.endereco.bairro = Convert.ToString(linha["bairro"]);
+                    funcionario.endereco.cidade = Convert.ToString(linha["cidade"]);
+                    funcionario.endereco.estado = Convert.ToInt32(linha["estado"]);
+                    funcionario.endereco.cep = Convert.ToString(linha["cep"]);
+                    //funcionario
+                    funcionario.setor = Convert.ToString(linha["setor"]);
+                    funcionario.cargo = Convert.ToString(linha["cargo"]);
+                    funcionario.dataEntrada = Convert.ToDateTime(linha["dataEntrada"]);
 
                     //adiciona os dados de cliente na clienteColecao
                     funcionarioColecao.Add(funcionario);
@@ -191,18 +201,34 @@ namespace DAL
                     funcionario.contato = new Contato();
                     funcionario.tipoPessoa = new TipoPessoa();
 
-                    /*
-                    funcionario.idAluno = Convert.ToInt32(linha["IDAluno"]);
-                    funcionario.nome = Convert.ToString(linha["Nome"]);
-                    funcionario.sobrenome = Convert.ToString(linha["Sobrenome"]);
-                    funcionario.cpf = Convert.ToString(linha["CPF"]);
-                    funcionario.rg = Convert.ToString(linha["RG"]);
-                    funcionario.rgExp = Convert.ToString(linha["RGExp"]);
-                    funcionario.dataNascimento = Convert.ToDateTime(linha["DataNascimento"]);
-                    funcionario.email = Convert.ToString(linha["Email"]);
-                    funcionario.sexo = Convert.ToString(linha["Sexo"]);
-                    funcionario.telefone = Convert.ToString(linha["Telefone"]);
-                    funcionario.celular = Convert.ToString(linha["Celular"]);*/
+                    //pessoa
+                    funcionario.idPessoa = Convert.ToInt32(linha["idPessoa"]);
+                    funcionario.tipoPessoa.descricao = Convert.ToString(linha["descricao"]);
+                    //pessoa fisica
+                    funcionario.nome = Convert.ToString(linha["nome"]);
+                    funcionario.cpf = Convert.ToString(linha["cpf"]);
+                    funcionario.rg = Convert.ToString(linha["rg"]);
+                    funcionario.sexo = Convert.ToString(linha["sexo"]);
+                    funcionario.dataNascimento = Convert.ToDateTime(linha["dataNascimento"]);
+                    //contato
+                    funcionario.contato.idContato = Convert.ToInt32(linha["idContato"]);
+                    funcionario.contato.email = Convert.ToString(linha["email"]);
+                    funcionario.contato.telefone = Convert.ToString(linha["telefone"]);
+                    funcionario.contato.celular = Convert.ToString(linha["celular"]);
+                    //endereco
+                    funcionario.endereco.idEndereco = Convert.ToInt32(linha["idEndereco"]);
+                    funcionario.endereco.rua = Convert.ToString(linha["rua"]);
+                    funcionario.endereco.numero = Convert.ToString(linha["numero"]);
+                    funcionario.endereco.bairro = Convert.ToString(linha["bairro"]);
+                    funcionario.endereco.cidade = Convert.ToString(linha["cidade"]);
+                    //estado
+                    funcionario.endereco.estado = Convert.ToInt32(linha["Estado"]);
+                    funcionario.endereco.cep = Convert.ToString(linha["cep"]);                    //funcionario.endereco.estado.estado = Convert.ToString(linha["estado"]);
+                    //funcionario.endereco.estado.sigla = Convert.ToString(linha["sigla"]);
+                    //funcionario
+                    funcionario.setor = Convert.ToString(linha["setor"]);
+                    funcionario.cargo = Convert.ToString(linha["cargo"]);
+                    funcionario.dataEntrada = Convert.ToDateTime(linha["dataEntrada"]);
 
                     //adiciona a coleção
                     funcionarioColecao.Add(funcionario);

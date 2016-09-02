@@ -8,7 +8,6 @@ namespace DTO
 {
     public class Funcionario : PessoaFisica
     {
-        public int idFuncionario { get; set; }
         public String setor { get; set; }
         public String cargo { get; set; }
         public DateTime dataEntrada { get; set; }

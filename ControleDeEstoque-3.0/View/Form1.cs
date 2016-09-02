@@ -20,7 +20,7 @@ namespace View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FrmManter manter = new FrmManter();
+            FrmConsultarFuncionario manter = new FrmConsultarFuncionario();
             manter.ShowDialog();
         }
 

@@ -58,6 +58,12 @@
     <Compile Include="FrmConsultar.Designer.cs">
       <DependentUpon>FrmConsultar.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmConsultarFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsultarFuncionario.Designer.cs">
+      <DependentUpon>FrmConsultarFuncionario.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmManter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,12 @@
     <Compile Include="FrmManterFuncionario.Designer.cs">
       <DependentUpon>FrmManterFuncionario.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmManterProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmManterProduto.Designer.cs">
+      <DependentUpon>FrmManterProduto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -78,11 +90,17 @@
     <EmbeddedResource Include="FrmConsultar.resx">
       <DependentUpon>FrmConsultar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmConsultarFuncionario.resx">
+      <DependentUpon>FrmConsultarFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmManter.resx">
       <DependentUpon>FrmManter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmManterFuncionario.resx">
       <DependentUpon>FrmManterFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmManterProduto.resx">
+      <DependentUpon>FrmManterProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
