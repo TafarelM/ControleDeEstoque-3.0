@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="AcessoDados_SQLServer.cs" />
     <Compile Include="EstadoDAL.cs" />
+    <Compile Include="FornecedorDAL.cs" />
     <Compile Include="FuncionarioDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">

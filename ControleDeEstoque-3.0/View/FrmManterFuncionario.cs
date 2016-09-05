@@ -12,14 +12,13 @@ namespace View
 {
     public partial class FrmManterFuncionario : View.FrmManter
     {
-        //parar poder usar o metodo do clienteCadastrar
         AcaoNaTela acaoNaTelaSelecionada;
 
         public FrmManterFuncionario(AcaoNaTela acaoNaTela, Funcionario funcionario)
         {
             InitializeComponent();
 
-            //guardando os dados para poder usar fora do frmClienteCadastrar
+            //
             this.acaoNaTelaSelecionada = acaoNaTela;
 
             if (acaoNaTela == AcaoNaTela.Inserir)
